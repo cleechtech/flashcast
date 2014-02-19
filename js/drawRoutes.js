@@ -1,5 +1,4 @@
 
-
 function drawRoutes(){
 	
 	$('input:checkbox').on('change', function(){
@@ -12,39 +11,29 @@ function drawRoutes(){
 			routeName = $(route).attr('value');
 			routesToDraw.push(routeName);
 		});
-		console.log('route names: ' + routesToDraw);
 		
+		// get data
+		var routes = localStorage['routes'];
+		routes = $.parseJSON(routes);
+		var routeObjs = [];
+		
+		// loop for each box checked
 		$.each(routesToDraw, function(index, name){
-			console.log('Name is: ' + name);
-			var route = findRouteByName(name);
 			
-			// console.log('Drawing data for this route ' + route);
-			// draw route
-			
-			
+			$.each(routes, function(index, route){
+				
+				if( route['name'] === name ){
+					routeObjs.push(route);
+					return false;
+				}
+			});
 		});
+		
+		routeObjs;	// array of route objects that need to be drawn
 	});
-	
 }
 
-function findRouteByName(name){
-	var routes = localStorage['routes'];
-	routes = $.parseJSON(routes);
-	
-	console.log('routes is: ' + JSON.stringify(routes));
-	
-	$.each(routes, function(index, route){
-		
-		console.log('route is: ' + JSON.stringify(route));
-		console.log('route["name"] is: ' + route["name"]);
-		console.log('routes[index][name] is: ' + routes[index][name]);
-		console.log('name is: ' + index);
-		
-		
-		if (route['name'] === routes[index][name]){
-			return route["name"];
-		}
-	});
-	
+function draw(routeObj){
+	// {"name":"33","description":"Commercial-Mombasa Rd-Tajmall-Pipeline","color":"#ff0000","waypoints":[]}
 	
 }

@@ -35,6 +35,7 @@ function draw(route){
 	
 	var coordinates = route.waypoints;
 	
+	// https://developers.google.com/maps/documentation/javascript/examples/polyline-simple
 	//~ var flightPlanCoordinates = [
 		//~ new google.maps.LatLng(37.772323, -122.214897),
 		//~ new google.maps.LatLng(21.291982, -157.821856),

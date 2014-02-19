@@ -1,6 +1,7 @@
 $document = $(document);
 
-$document.ready(function(){
+$document.ready(function(){	
+	$('#map-canvas').css('height', window.innerHeight + 'px');
 // ==================================
 	// sidebar scroller
 // ==================================
@@ -24,7 +25,9 @@ $document.ready(function(){
 	$(window).resize(function(){
 		view_height = window.innerHeight - 145 - 10; 	// recalculate scrollbar height
 		$viewport.css('height', view_height);
-		$feedHolder.tinyscrollbar()
+		$feedHolder.tinyscrollbar();
+		
+		$('#map-canvas').css('height', window.innerHeight + 'px');
 	});
 	
 // ==================================

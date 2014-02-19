@@ -7,7 +7,7 @@ $(function(){
 // =======================================
 	// Request data (ajax or localStorage)
 // =======================================
-	if (localStorage.getItem("routes") === null){		// if data does not exist in localStorage..
+	if (localStorage.getItem("routes") != null){		// if data does not exist in localStorage..
 		console.log('ajax request sent!');
 		
 		$.ajax({
@@ -55,13 +55,14 @@ function createRouteObjects(data){
 	$.each(routes, function(index, route){
 		
 		// find waypoints
-		// var waypoints = match_stages(route.stage_ids, dataObj);
+		var waypoints = match_stages(route.stage_ids, dataObj);
+		console.log(waypoints);
 		
 		var routeObj = {
 			'name': route.name,
 			'description': route.descriptor,
 			'color': route.color,
-			'waypoints': []		// waypoints
+			'waypoints': waypoints
 		};
 		
 		// add to sidebar

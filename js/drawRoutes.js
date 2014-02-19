@@ -15,25 +15,44 @@ function drawRoutes(){
 		// get data
 		var routes = localStorage['routes'];
 		routes = $.parseJSON(routes);
-		var routeObjs = [];
 		
 		// loop for each box checked
 		$.each(routesToDraw, function(index, name){
 			
 			$.each(routes, function(index, route){
-				
 				if( route['name'] === name ){
-					routeObjs.push(route);
+					
+					draw(route)
 					return false;
 				}
 			});
 		});
-		
-		routeObjs;	// array of route objects that need to be drawn
 	});
 }
 
-function draw(routeObj){
+function draw(route){
 	// {"name":"33","description":"Commercial-Mombasa Rd-Tajmall-Pipeline","color":"#ff0000","waypoints":[]}
 	
+	var coordinates = route.waypoints;
+	
+	//~ var flightPlanCoordinates = [
+		//~ new google.maps.LatLng(37.772323, -122.214897),
+		//~ new google.maps.LatLng(21.291982, -157.821856),
+		//~ new google.maps.LatLng(-18.142599, 178.431),
+		//~ new google.maps.LatLng(-27.46758, 153.027892)
+  //~ ];
+  //~ var flightPath = new google.maps.Polyline({
+    //~ path: flightPlanCoordinates,
+    //~ geodesic: true,
+    //~ strokeColor: '#FF0000',
+    //~ strokeOpacity: 1.0,
+    //~ strokeWeight: 2
+  //~ });
+//~ 
+  //~ flightPath.setMap(map);
+	
+	drawWithDirections(route);
+	
+	
+	console.log('just drew ' + route.name + ' on coordinates ' + route.waypoints);
 }

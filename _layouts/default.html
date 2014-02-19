@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+		
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+        <!-- CSS lib -->
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel='stylesheet' href='/css/font-awesome.css'>
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/simple_sidebar.css">
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+	<div id="loading_block" ><span>LOADING</span></div>
+	<!-- #wrapper -->
+    <div id="wrapper">
+      
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav nav" role="navigation">
+          <li class="sidebar-brand"><a href="/">{{ site.name }}</span></a></li>
+          <li><a href="/about.html"><i class="fa fa-info-circle"></i>About</a></li>
+          <li><a href="/contact.html"><i class="fa fa-envelope"></i>Contact</a></li>   
+        </ul>
+      
+        <div id="feedHolder">
+			
+			<!-- scroller -->
+			<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+			<!-- /scroller -->
+			
+            <div class="viewport">
+                <div class="overview">
+                  <ul>
+                    <li id='routes' class="stories-label"><i class="fa fa-arrows-alt"></i>Routes</li>
+                    <div style="height:30px"></div>
+                  </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- /#Sidebar
+
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <div class="content-header">
+            <a class="btn btn-default" id='menu-toggle'><i class="fa fa-bars"></i></a>
+        </div>
+          {{ content }}
+	  </div>
+	  <!-- /Page content -->
+	  
+	</div> 
+	<!-- /#wrapper -->
+	 <script src='/js/lib/jquery.js'></script>
+	 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD2Io5vOGwBSmZbpEIpDADXxrwzLiid46g&sensor=false'></script>
+     <script src='/js/lib/bootstrap.js'></script>
+     <script src='/js/lib/tinyscrollbar.min.js'></script>
+     <script src='/js/lib/mustache.js'></script>
+     <script src='/js/makeMap.js'></script>
+     <script src='/js/drawRoutes.js'></script>
+     <script src='/js/setup.js'></script>
+     <script src='/js/routes.js'></script>
+     
+    </body>
+</html>

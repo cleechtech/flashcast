@@ -1,3 +1,4 @@
 name: Flashcast
 markdown: redcarpet
 pygments: true
+exclude: ["vendor"]

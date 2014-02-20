@@ -1,4 +1,4 @@
 name: Flashcast
 markdown: redcarpet
 pygments: true
-exclude: ["vendor"]
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']

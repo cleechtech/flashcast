@@ -7,7 +7,7 @@ $(function(){
 // =======================================
 	// Request data (ajax or localStorage)
 // =======================================
-	if (localStorage.getItem("routes") != null){		// if data does not exist in localStorage..
+	if (localStorage.getItem("routes") === null){		// if data does not exist in localStorage..
 		console.log('ajax request sent!');
 		
 		$.ajax({

@@ -24,6 +24,10 @@ function drawWithDirections(route){
 	var directionsService = new google.maps.DirectionsService();
 	var directionsDisplay = new google.maps.DirectionsRenderer();
 	
+	$('input:checkbox').on('change', function(){
+		directionsDisplay.set('directions', null);	// remove previous Directions
+	});
+	
 	// set directions display to map
 	directionsDisplay.setMap(map);
 	

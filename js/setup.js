@@ -54,6 +54,12 @@ $document.ready(function(){
 		var view_height = window.innerHeight - 145 - 10; 	// subtracts height of ul sidebar-nav and 10 more pixels
 		$viewport.css('height', view_height);
 		$feedHolder.tinyscrollbar();
+		
+		// listen for clicks to routes
+		$('.headline').on('click', function(e){
+			e.preventDefault(); 
+			$(this).toggleClass('selected');
+		});
 	});
 	
 	

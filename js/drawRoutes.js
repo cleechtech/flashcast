@@ -2,6 +2,7 @@
 function drawRoutes(){
 	
 	$('input:checkbox').on('change', function(){
+		
 		var routesToDraw = [];
 		
 		// gets all checked html input fields

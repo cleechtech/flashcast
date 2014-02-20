@@ -1,6 +1,3 @@
-// I need a generate data function that will send ajax and make the data or use local storage
-// after the data is loaded, do things
-
 var routeObjects = [];
 
 $(function(){
@@ -30,6 +27,12 @@ $(function(){
 		// loop over each formatted route object	
 		$.each(routes, function(index, route){
 			addToSidebar(route);
+		});
+		
+		// listen for clicks to routes
+		$('.headline').on('click', function(e){
+			e.preventDefault(); 
+			$(this).toggleClass('selected');
 		});
 		
 		$loading_block.addClass('hidden');
@@ -71,7 +74,7 @@ function createRouteObjects(data){
 		// add to array
 		routeObjects.push(routeObj);
 	});
-	
+
 	// add data to html5 local storage
 	localStorage['routes'] = JSON.stringify(routeObjects);
 	

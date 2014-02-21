@@ -55,7 +55,7 @@ $document.ready(function(){
 		$viewport.css('height', view_height);
 		$feedHolder.tinyscrollbar();
 		
-		// listen for clicks to routes
+		// listen for clicks to route links
 		$('.headline').on('click', function(e){
 			e.preventDefault(); 
 			$(this).toggleClass('selected');

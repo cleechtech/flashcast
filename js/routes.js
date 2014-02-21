@@ -4,7 +4,7 @@ $(function(){
 // =======================================
 	// Request data (ajax or localStorage)
 // =======================================
-	if (localStorage.getItem("routes") === null){		// if data does not exist in localStorage..
+	if (true){		// localStorage.getItem("routes") === null // if data does not exist in localStorage..
 		console.log('ajax request sent!');
 		
 		$.ajax({
@@ -57,9 +57,8 @@ function createRouteObjects(data){
 	// loop over each raw route object	
 	$.each(routes, function(index, route){
 		
-		// find waypoints
-		var waypoints = match_stages(route.stage_ids, dataObj);
-		console.log(waypoints);
+		// make array of LatLng points
+		var waypoints = createWaypoints(route.geo, dataObj);
 		
 		var routeObj = {
 			'name': route.name,
@@ -67,7 +66,7 @@ function createRouteObjects(data){
 			'color': route.color,
 			'waypoints': waypoints
 		};
-		
+				
 		// add to sidebar
 		addToSidebar(routeObj);
 		

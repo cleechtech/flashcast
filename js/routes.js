@@ -22,7 +22,6 @@ $(function(){
 		
 		var routes = localStorage['routes'];
 		routes = JSON.parse(routes);
-		routeObjects = routes;
 		
 		// loop over each formatted route object	
 		$.each(routes, function(index, route){
@@ -43,7 +42,7 @@ $(function(){
 		$feedHolder.tinyscrollbar();
 		
 		makeMap();
-		drawRoutes();
+		drawRoutes(routes);
 	}
 });
 
@@ -53,6 +52,8 @@ $(function(){
 function createRouteObjects(data){
 	var dataObj = $.parseJSON(data),
 		routes = dataObj.routes;
+	
+	var routeObjects = [];
 	
 	// loop over each raw route object	
 	$.each(routes, function(index, route){
@@ -78,7 +79,7 @@ function createRouteObjects(data){
 	localStorage['routes'] = JSON.stringify(routeObjects);
 	
 	makeMap();
-	drawRoutes();
+	drawRoutes(routeObjects);
 }
 
 

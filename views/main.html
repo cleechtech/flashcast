@@ -1,5 +1,9 @@
 <div ng-controller='RouteCtrl'>
-	<pre>{{routes | json}}</pre>
-
-
+	<!--
+	<pre>{{shapes | json}}</pre> shapes.json
+	<pre>{{matches | json}}</pre> match.json 
+	-->
+	<div ng-repeat='(route_id, route) in routes'>
+		{{route.description}}: {{route_id}}
+	</div>
 </div>

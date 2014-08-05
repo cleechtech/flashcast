@@ -1,4 +1,5 @@
 name: Flashcast
+baseurl: /flashcast
 markdown: redcarpet
 pygments: true
 exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
